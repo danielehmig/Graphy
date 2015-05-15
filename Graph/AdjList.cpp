@@ -30,6 +30,12 @@ namespace Graphy_Graph
 		{
 			mAdjList.push_front(*it);
 		}
+
+		for (std::forward_list<int>::const_iterator it = list.mCostList.begin(); 
+				it != list.mCostList.end(); it++)
+		{
+			mCostList.push_front(*it);
+		}
 	}
 
 	/* ====================================================
@@ -43,7 +49,7 @@ namespace Graphy_Graph
 	/* ====================================================
 		addNode(AdjListNode)
 	==================================================== */
-	void AdjList::addNode(const AdjListNode& node)
+	void AdjList::addNode(const AdjListNode& node, int cost)
 	{
 		// Need to check if the node is already on the list
 		if (exists(node))
@@ -52,6 +58,7 @@ namespace Graphy_Graph
 			return;
 		}
 		mAdjList.push_front(node);
+		mCostList.push_front(cost);
 		mNumEdges++;
 	}
 
@@ -60,26 +67,41 @@ namespace Graphy_Graph
 	==================================================== */
 	void AdjList::removeNode(const AdjListNode& node)
 	{
+		// If the list is empty, we don't need to remove anything
+		if (mAdjList.empty())
+		{
+			return;
+		}
+
 		// First, check if the front is the node to remove
 		if (mAdjList.front() == node)
 		{
 			mAdjList.pop_front();
+			mCostList.pop_front();
 			mNumEdges--;
 		}
 		else
 		{
 			std::forward_list<AdjListNode>::const_iterator prev = mAdjList.begin();
 			std::forward_list<AdjListNode>::const_iterator it = prev++;
+
+			// Also for the costs
+			std::forward_list<int>::const_iterator costPrev = mCostList.begin();
+			std::forward_list<int>::const_iterator costIt = costPrev++;
 			while (it != mAdjList.end())
 			{
 				if (*it == node)
 				{
-					mAdjList.erase_after(it);
+					mAdjList.erase_after(prev);
+					mCostList.erase_after(costPrev);
 					mNumEdges--;
 					break;
 				}
 				prev = it;
 				it++;
+
+				costPrev = costIt;
+				costIt++;
 			}
 		}
 	}
@@ -106,6 +128,15 @@ namespace Graphy_Graph
 
 		// We never found it
 		return false;
+	}
+
+
+	/* ====================================================
+		getCostList()
+	==================================================== */
+	std::forward_list<int> AdjList::getCostList() const
+	{
+		return mCostList;
 	}
 
 	/* ====================================================

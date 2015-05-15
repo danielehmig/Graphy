@@ -20,7 +20,7 @@ namespace Graphy_Graph
 	{
 		mNumEdges = 0;
 		mNumNodes = 0;
-		mDirected = true;
+		mDirected = directed;
 
 		// Increase the vector's capacity to hold at least <capacity> elements
 		mGraph.reserve(capacity);
@@ -128,6 +128,7 @@ namespace Graphy_Graph
 				mGraph.erase(remover);
 			}
 			mNumNodes--;
+			mLabelMap.erase(label);
 		}
 		catch (std::out_of_range e)
 		{
@@ -137,15 +138,15 @@ namespace Graphy_Graph
 	/* ====================================================
 		addEdge(AdjListNode, AdjListNode)
 	==================================================== */
-	void Graph::addEdge(const AdjListNode& src, const AdjListNode& dst)
+	void Graph::addEdge(const AdjListNode& src, const AdjListNode& dst, int cost)
 	{
-		addEdge(src.getLabel(), dst.getLabel());
+		addEdge(src.getLabel(), dst.getLabel(), cost);
 	}
 
 	/* ====================================================
 		addEdge(string, string)
 	==================================================== */
-	void Graph::addEdge(const std::string& src, const std::string& dst)
+	void Graph::addEdge(const std::string& src, const std::string& dst, int cost)
 	{
 		try
 		{
@@ -153,7 +154,7 @@ namespace Graphy_Graph
 			int dstIndex = mLabelMap.at(dst);
 
 			int n1 = mGraph[srcIndex].numEdges();
-			mGraph[srcIndex].addNode(mGraph[dstIndex].getNode());
+			mGraph[srcIndex].addNode(mGraph[dstIndex].getNode(), cost);
 			int n2 = mGraph[srcIndex].numEdges();
 
 			mNumEdges += (n2 - n1);
@@ -161,7 +162,7 @@ namespace Graphy_Graph
 			if (!mDirected)
 			{
 				int n1 = mGraph[dstIndex].numEdges();
-				mGraph[dstIndex].addNode(mGraph[srcIndex].getNode());
+				mGraph[dstIndex].addNode(mGraph[srcIndex].getNode(), cost);
 				int n2 = mGraph[dstIndex].numEdges();
 				mNumEdges += (n2 - n1);
 			}
@@ -265,7 +266,7 @@ namespace Graphy_Graph
 	/* ====================================================
 		connectedEdges(AdjListNode)
 	==================================================== */
-	int Graph::connectedEdges(const AdjListNode& node) const
+	AdjList Graph::connectedEdges(const AdjListNode& node)
 	{
 		return connectedEdges(node.getLabel());
 	}
@@ -273,20 +274,50 @@ namespace Graphy_Graph
 	/* ====================================================
 		connectedEdges(string)
 	==================================================== */
-	int Graph::connectedEdges(const std::string& label) const
+	AdjList Graph::connectedEdges(const std::string& label)
 	{
 		// Find the label's index in the graph
 		try
 		{
 			int index = mLabelMap.at(label);
-			return mGraph[index].numEdges();
+			return mGraph[index];
 		}
 		catch (std::out_of_range e)
 		{
-			// We'll treat a label not in the graph as a "free-floating"
-			// node that "exists" but is not "part" of the graph
-			return 0;
+			// WARNING: For now, behavior is to add the node if it doesn't exist
+			addNode(label);
+			return mGraph[mLabelMap.at(label)];
 		}
+	}
+
+	/* ====================================================
+		getAllNodes()
+	==================================================== */
+	std::vector<AdjListNode> Graph::getAllNodes() const
+	{
+		std::vector<AdjListNode> ret;
+		for (std::vector<AdjList>::const_iterator it = mGraph.begin(); it != mGraph.end(); it++)
+		{
+			ret.push_back(it->getNode());
+		}
+
+		return ret;
+	}
+
+	/* ====================================================
+		getNodeAtIndex(int)
+	==================================================== */
+	AdjListNode Graph::getNodeAtIndex(int index) const
+	{
+		return mGraph[index].getNode();
+	}
+
+	/* ====================================================
+		getNodeWithLabel(string)
+	==================================================== */
+	AdjListNode Graph::getNodeWithLabel(const std::string& s) const
+	{
+		return mGraph[mLabelMap.at(s)].getNode();
 	}
 
 	/* ====================================================

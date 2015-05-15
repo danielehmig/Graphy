@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <map>
+#include <list>
 #include <exception>
 #include "AdjList.h"
 
@@ -45,11 +46,13 @@ namespace Graphy_Graph
 
 		// Add an edge between the two specified nodes.
 		// For directed graphs, edge starts at "src" and ends at "dst".
-		void addEdge(const AdjListNode& src, const AdjListNode& dst);
+		// The edge will have the specified cost.
+		void addEdge(const AdjListNode& src, const AdjListNode& dst, int cost);
 
 		// Add an edge between the two nodes with the specified labels.
 		// For directed graphs, edge starts at "src" and ends at "dst".
-		void addEdge(const std::string& src, const std::string& dst);
+		// The edge will have the specified cost.
+		void addEdge(const std::string& src, const std::string& dst, int cost);
 
 		// Remove the edge between the specified nodes. If the graph is
 		// directed, the edge from the first paramter to the second
@@ -77,11 +80,22 @@ namespace Graphy_Graph
 		// Test whether a node with the given label is in the graph.
 		bool nodeExists(const std::string&) const;
 
-		// Return the number of edges for the given node.
-		int connectedEdges(const AdjListNode&) const;
+		// Return the adjacency list for the given node (if any).
+		AdjList connectedEdges(const AdjListNode&);
 
-		// Return the number of edges for the node with the given label.
-		int connectedEdges(const std::string&) const;
+		// Return the adjacency list for the node with the given label (if any).
+		AdjList connectedEdges(const std::string&);
+
+		// Return a list of all of the nodes in the graph.
+		std::vector<AdjListNode> getAllNodes() const;
+
+		// Get the node with the specified index.
+		// WARNING: Undefined behavior if index is invalid.
+		AdjListNode getNodeAtIndex(int index) const;
+
+		// Get the node with the specified label.
+		// WARNING: Undefined behavior if label is invalid.
+		AdjListNode getNodeWithLabel(const std::string& s) const;
 
 		// Return the total number of edges in the graph.
 		int numEdges() const;
