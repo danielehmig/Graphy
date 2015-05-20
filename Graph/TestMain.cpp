@@ -219,7 +219,7 @@ int main3(int argc, char** argv)
 }
 
 // Test All Pairs Shortest Path
-int main4(int argc, char ** argv)
+int main(int argc, char ** argv)
 {
 	Graph graph(13, false);
 
@@ -289,7 +289,7 @@ int main4(int argc, char ** argv)
 }
 
 // Test Tarjan's Algorithm to find strongly-connected components
-int main(int argc, char ** argv)
+int main4(int argc, char ** argv)
 {
 	Graph graph(8, true);
 

@@ -73,10 +73,10 @@ namespace Graphy_Algorithm
 		}
 
 		// Delete the heap-allocated memory
-		/*for (int i = 0; i < numNodes; ++i)
+		for (int i = 0; i < numNodes; ++i)
 		{
-			delete matrix[i];
-		}*/
+			delete [] matrix[i];
+		}
 
 		// We're done here
 		return retVal;
