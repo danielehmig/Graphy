@@ -1,0 +1,958 @@
+********************* ALL PAIRS SHORTEST PATH ***********************
+
+All paths with "Astoria" as the destination:
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Seaside
+	Astoria
+
+------------------------------------------------------
+	Florence
+	Seaside
+	Astoria
+
+------------------------------------------------------
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Salem
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Eugene
+	Salem
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Blue River
+	Eugene
+	Salem
+	Portland
+	Astoria
+
+------------------------------------------------------
+	The Dalles
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Bend
+	The Dalles
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Burns
+	Bend
+	The Dalles
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Astoria
+
+------------------------------------------------------
+	Ontario
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Astoria
+
+All paths with "Seaside" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Seaside
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Florence
+	Seaside
+
+------------------------------------------------------
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Salem
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Eugene
+	Salem
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Blue River
+	Eugene
+	Salem
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	The Dalles
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Bend
+	The Dalles
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Burns
+	Bend
+	The Dalles
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Astoria
+	Seaside
+
+------------------------------------------------------
+	Ontario
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Astoria
+	Seaside
+
+All paths with "Florence" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Seaside
+	Florence
+
+------------------------------------------------------
+	Seaside
+	Florence
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Portland
+	Salem
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Salem
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Blue River
+	Eugene
+	Florence
+
+------------------------------------------------------
+	The Dalles
+	Portland
+	Salem
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Bend
+	Blue River
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Portland
+	Salem
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Burns
+	Bend
+	Blue River
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Salem
+	Eugene
+	Florence
+
+------------------------------------------------------
+	Ontario
+	Burns
+	Bend
+	Blue River
+	Eugene
+	Florence
+
+All paths with "Portland" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Salem
+	Portland
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Salem
+	Portland
+
+------------------------------------------------------
+	Eugene
+	Salem
+	Portland
+
+------------------------------------------------------
+	Blue River
+	Eugene
+	Salem
+	Portland
+
+------------------------------------------------------
+	The Dalles
+	Portland
+
+------------------------------------------------------
+	Bend
+	The Dalles
+	Portland
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Portland
+
+------------------------------------------------------
+	Burns
+	Bend
+	The Dalles
+	Portland
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+
+------------------------------------------------------
+	Ontario
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+
+All paths with "Salem" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	Salem
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	Salem
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Salem
+
+------------------------------------------------------
+	Portland
+	Salem
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Eugene
+	Salem
+
+------------------------------------------------------
+	Blue River
+	Eugene
+	Salem
+
+------------------------------------------------------
+	The Dalles
+	Portland
+	Salem
+
+------------------------------------------------------
+	Bend
+	Blue River
+	Eugene
+	Salem
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Portland
+	Salem
+
+------------------------------------------------------
+	Burns
+	Bend
+	Blue River
+	Eugene
+	Salem
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Salem
+
+------------------------------------------------------
+	Ontario
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Salem
+
+All paths with "Eugene" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	Salem
+	Eugene
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	Salem
+	Eugene
+
+------------------------------------------------------
+	Florence
+	Eugene
+
+------------------------------------------------------
+	Portland
+	Salem
+	Eugene
+
+------------------------------------------------------
+	Salem
+	Eugene
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Blue River
+	Eugene
+
+------------------------------------------------------
+	The Dalles
+	Portland
+	Salem
+	Eugene
+
+------------------------------------------------------
+	Bend
+	Blue River
+	Eugene
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Portland
+	Salem
+	Eugene
+
+------------------------------------------------------
+	Burns
+	Bend
+	Blue River
+	Eugene
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+	The Dalles
+	Portland
+	Salem
+	Eugene
+
+------------------------------------------------------
+	Ontario
+	Burns
+	Bend
+	Blue River
+	Eugene
+
+All paths with "Blue River" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	Salem
+	Eugene
+	Blue River
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	Salem
+	Eugene
+	Blue River
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Blue River
+
+------------------------------------------------------
+	Portland
+	Salem
+	Eugene
+	Blue River
+
+------------------------------------------------------
+	Salem
+	Eugene
+	Blue River
+
+------------------------------------------------------
+	Eugene
+	Blue River
+
+------------------------------------------------------
+
+------------------------------------------------------
+	The Dalles
+	Bend
+	Blue River
+
+------------------------------------------------------
+	Bend
+	Blue River
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Bend
+	Blue River
+
+------------------------------------------------------
+	Burns
+	Bend
+	Blue River
+
+------------------------------------------------------
+	Baker City
+	Ontario
+	Burns
+	Bend
+	Blue River
+
+------------------------------------------------------
+	Ontario
+	Burns
+	Bend
+	Blue River
+
+All paths with "The Dalles" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	The Dalles
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	The Dalles
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Salem
+	Portland
+	The Dalles
+
+------------------------------------------------------
+	Portland
+	The Dalles
+
+------------------------------------------------------
+	Salem
+	Portland
+	The Dalles
+
+------------------------------------------------------
+	Eugene
+	Salem
+	Portland
+	The Dalles
+
+------------------------------------------------------
+	Blue River
+	Bend
+	The Dalles
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Bend
+	The Dalles
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+
+------------------------------------------------------
+	Burns
+	Bend
+	The Dalles
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+	The Dalles
+
+------------------------------------------------------
+	Ontario
+	Baker City
+	Pendleton
+	The Dalles
+
+All paths with "Bend" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	The Dalles
+	Bend
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	The Dalles
+	Bend
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Blue River
+	Bend
+
+------------------------------------------------------
+	Portland
+	The Dalles
+	Bend
+
+------------------------------------------------------
+	Salem
+	Eugene
+	Blue River
+	Bend
+
+------------------------------------------------------
+	Eugene
+	Blue River
+	Bend
+
+------------------------------------------------------
+	Blue River
+	Bend
+
+------------------------------------------------------
+	The Dalles
+	Bend
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Pendleton
+	The Dalles
+	Bend
+
+------------------------------------------------------
+	Burns
+	Bend
+
+------------------------------------------------------
+	Baker City
+	Ontario
+	Burns
+	Bend
+
+------------------------------------------------------
+	Ontario
+	Burns
+	Bend
+
+All paths with "Pendleton" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Salem
+	Portland
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	Portland
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	Salem
+	Portland
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	Eugene
+	Salem
+	Portland
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	Blue River
+	Bend
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+	Bend
+	The Dalles
+	Pendleton
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Burns
+	Pendleton
+
+------------------------------------------------------
+	Baker City
+	Pendleton
+
+------------------------------------------------------
+	Ontario
+	Baker City
+	Pendleton
+
+All paths with "Burns" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	The Dalles
+	Bend
+	Burns
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	The Dalles
+	Bend
+	Burns
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Blue River
+	Bend
+	Burns
+
+------------------------------------------------------
+	Portland
+	The Dalles
+	Bend
+	Burns
+
+------------------------------------------------------
+	Salem
+	Eugene
+	Blue River
+	Bend
+	Burns
+
+------------------------------------------------------
+	Eugene
+	Blue River
+	Bend
+	Burns
+
+------------------------------------------------------
+	Blue River
+	Bend
+	Burns
+
+------------------------------------------------------
+	The Dalles
+	Bend
+	Burns
+
+------------------------------------------------------
+	Bend
+	Burns
+
+------------------------------------------------------
+	Pendleton
+	Burns
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Baker City
+	Ontario
+	Burns
+
+------------------------------------------------------
+	Ontario
+	Burns
+
+All paths with "Baker City" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Salem
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Salem
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Eugene
+	Salem
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Blue River
+	Bend
+	Burns
+	Ontario
+	Baker City
+
+------------------------------------------------------
+	The Dalles
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Bend
+	Burns
+	Ontario
+	Baker City
+
+------------------------------------------------------
+	Pendleton
+	Baker City
+
+------------------------------------------------------
+	Burns
+	Ontario
+	Baker City
+
+------------------------------------------------------
+
+------------------------------------------------------
+	Ontario
+	Baker City
+
+All paths with "Ontario" as the destination:
+
+------------------------------------------------------
+	Astoria
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+	Ontario
+
+------------------------------------------------------
+	Seaside
+	Astoria
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+	Ontario
+
+------------------------------------------------------
+	Florence
+	Eugene
+	Blue River
+	Bend
+	Burns
+	Ontario
+
+------------------------------------------------------
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+	Ontario
+
+------------------------------------------------------
+	Salem
+	Portland
+	The Dalles
+	Pendleton
+	Baker City
+	Ontario
+
+------------------------------------------------------
+	Eugene
+	Blue River
+	Bend
+	Burns
+	Ontario
+
+------------------------------------------------------
+	Blue River
+	Bend
+	Burns
+	Ontario
+
+------------------------------------------------------
+	The Dalles
+	Pendleton
+	Baker City
+	Ontario
+
+------------------------------------------------------
+	Bend
+	Burns
+	Ontario
+
+------------------------------------------------------
+	Pendleton
+	Baker City
+	Ontario
+
+------------------------------------------------------
+	Burns
+	Ontario
+
+------------------------------------------------------
+	Baker City
+	Ontario
+
+------------------------------------------------------
+

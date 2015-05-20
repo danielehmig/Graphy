@@ -1,8 +1,10 @@
 #include "Graph.h"
 #include "../Algorithm/Dijkstra.h"
+#include "../Algorithm/APShortestPath.h"
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
+#include <fstream>
 
 /* ======================================================== 
 	TestMain.cpp
@@ -101,6 +103,7 @@ void testNodeExists(Graph& theGraph)
 	std::cout << "Node \"" << "F" << "\" exists?: " << theGraph.nodeExists("F") << "\n";
 }
 
+// Testing graph creation and modification functionality
 int main2(int argc, char** argv)
 {
 	//Graph theGraph(11, true);
@@ -158,7 +161,8 @@ void printGraphMain2(Graph& graph)
 	}
 }
 
-int main(int argc, char** argv)
+// Test Dijkstra's Algorithm
+int main3(int argc, char** argv)
 {
 
 	// NOTE: SHIT AIN'T WORKIN' WITH A DIRECTED GRAPH
@@ -209,6 +213,76 @@ int main(int argc, char** argv)
 	{
 		std::cout << it->getLabel() << "\n";
 	}
+	system("PAUSE");
+	return EXIT_SUCCESS;
+}
+
+// Test All Pairs Shortest Path
+int main(int argc, char ** argv)
+{
+	Graph graph(13, false);
+
+	graph.addNode("Astoria");
+	graph.addNode("Seaside");
+	graph.addNode("Florence");
+	graph.addNode("Portland");
+	graph.addNode("Salem");
+	graph.addNode("Eugene");
+	graph.addNode("Blue River");
+	graph.addNode("The Dalles");
+	graph.addNode("Bend");
+	graph.addNode("Pendleton");
+	graph.addNode("Burns");
+	graph.addNode("Baker City");
+	graph.addNode("Ontario");
+
+	graph.addEdge("Astoria", "Seaside", 16);
+	graph.addEdge("Astoria", "Portland", 95);
+	graph.addEdge("Seaside", "Florence", 166);
+	graph.addEdge("Florence", "Eugene", 61);
+	graph.addEdge("Portland", "Salem", 46);
+	graph.addEdge("Salem", "Eugene", 66);
+	graph.addEdge("Portland", "The Dalles", 83);
+	graph.addEdge("Eugene", "Blue River", 43);
+	graph.addEdge("Blue River", "Bend", 85);
+	graph.addEdge("The Dalles", "Bend", 130);
+	graph.addEdge("The Dalles", "Pendleton", 126);
+	graph.addEdge("Bend", "Burns", 130);
+	graph.addEdge("Pendleton", "Burns", 196);
+	graph.addEdge("Pendleton", "Baker City", 95);
+	graph.addEdge("Baker City", "Ontario", 75);
+	graph.addEdge("Ontario", "Burns", 130);
+	
+	std::ofstream output;
+	output.open("output.txt");
+
+	std::vector<std::vector<std::vector<AdjListNode>>> ap = 
+		Graphy_Algorithm::APShortestPath::apShortestPath(graph);
+
+	std::cout << "Finished AP Shortest Path...\n";
+
+	output << "********************* ALL PAIRS SHORTEST PATH ***********************\n\n";
+	
+	int numNodes = graph.numNodes();
+	for (int i = 0; i < numNodes; ++i)
+	{
+		output << "All paths with \"" << graph.getNodeAtIndex(i).getLabel() << "\" as the destination:\n";
+		std::vector<std::vector<AdjListNode>> paths = ap[i];
+		for (int j = 0; j < paths.size(); ++j)
+		{
+			output << "\n------------------------------------------------------\n";
+			std::vector<AdjListNode> p = paths[j];
+			for (int k = p.size() - 1; k >= 0; --k)
+			{
+				output << "\t" << p[k].getLabel() << "\n";
+			}
+		}
+
+		output << "\n";
+	}
+
+	output.close();
+	std::cout << "Done\n";
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }

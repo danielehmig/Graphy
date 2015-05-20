@@ -13,7 +13,7 @@ namespace Graphy_Algorithm
 	{
 	public:
 
-		// This (static) function takes a Graph, a start node, and a destination node,
+		// This function takes a Graph, a start node, and a destination node,
 		// then finds the shortest path (if any) between the two. The return value is
 		// an ordered vector of nodes that specifies the path between the two nodes,
 		// where the node in the 0th position in the vector is the destination and the node
