@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include "../Algorithm/Dijkstra.h"
 #include "../Algorithm/APShortestPath.h"
+#include "../Algorithm/Tarjan.h"
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
@@ -204,21 +205,21 @@ int main3(int argc, char** argv)
 	AdjListNode src = graph.getNodeWithLabel("Bend");
 	AdjListNode dst = graph.getNodeWithLabel("Bend");
 
-	Graphy_Algorithm::Dijkstra driver;
+	//Graphy_Algorithm::Dijkstra driver;
 
-	std::vector<AdjListNode> path = driver.dijkstra(graph, src, dst);
+	//std::vector<AdjListNode> path = driver.dijkstra(graph, src, dst);
 
-	std::cout << "-------------The Shortest Path-------------\n";
+	/*std::cout << "-------------The Shortest Path-------------\n";
 	for (std::vector<AdjListNode>::reverse_iterator it = path.rbegin(); it != path.rend(); it++)
 	{
 		std::cout << it->getLabel() << "\n";
-	}
+	}*/
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }
 
 // Test All Pairs Shortest Path
-int main(int argc, char ** argv)
+int main4(int argc, char ** argv)
 {
 	Graph graph(13, false);
 
@@ -283,6 +284,75 @@ int main(int argc, char ** argv)
 
 	output.close();
 	std::cout << "Done\n";
+	system("PAUSE");
+	return EXIT_SUCCESS;
+}
+
+// Test Tarjan's Algorithm to find strongly-connected components
+int main(int argc, char ** argv)
+{
+	Graph graph(8, true);
+
+	graph.addNode("A");
+	graph.addNode("B");
+	graph.addNode("C");
+	graph.addNode("D");
+	graph.addNode("E");
+	graph.addNode("F");
+	graph.addNode("G");
+	graph.addNode("H");
+	/*graph.addNode("I");
+	graph.addNode("J");
+	graph.addNode("K");
+	graph.addNode("L");*/
+
+	graph.addEdge("A", "B", 0);
+	graph.addEdge("C", "A", 0);
+	graph.addEdge("B", "C", 0);
+	graph.addEdge("B", "D", 0);
+	graph.addEdge("D", "C", 0);
+	graph.addEdge("B", "E", 0);
+	graph.addEdge("D", "E", 0);
+	graph.addEdge("E", "F", 0);
+	graph.addEdge("E", "H", 0);
+	graph.addEdge("E", "G", 0);
+	graph.addEdge("F", "G", 0);
+	graph.addEdge("G", "H", 0);
+	graph.addEdge("H", "F", 0);
+
+	/*graph.addEdge("B", "A", 0);
+	graph.addEdge("B", "E", 0);
+	graph.addEdge("D", "B", 0);
+	graph.addEdge("C", "B", 0);
+	graph.addEdge("C", "F", 0);
+	graph.addEdge("E", "B", 0);
+	graph.addEdge("F", "C", 0);
+	graph.addEdge("F", "E", 0);
+	graph.addEdge("G", "E", 0);
+	graph.addEdge("G", "I", 0);
+	graph.addEdge("H", "G", 0);
+	graph.addEdge("H", "F", 0);
+	graph.addEdge("I", "J", 0);
+	graph.addEdge("J", "G", 0);
+	graph.addEdge("J", "L", 0);
+	graph.addEdge("K", "H", 0);
+	graph.addEdge("L", "K", 0);*/
+
+	Graphy_Algorithm::Tarjan tarjan;
+
+	// NOTE: SHIT AIN'T WORKIN'
+	std::vector<std::vector<AdjListNode>> scc = tarjan.tarjan(graph);
+
+	std::cout << "***************Strongly Connected Components****************\n\n";
+
+	for (std::vector<std::vector<AdjListNode>>::iterator it = scc.begin(); it != scc.end(); it++)
+	{ 
+		std::cout << "---------------------------------------------\n";
+		for (std::vector<AdjListNode>::iterator it2 = it->begin(); it2 != it->end(); it2++)
+		{
+			std::cout << it2->getLabel() << "\n";
+		}
+	}
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }

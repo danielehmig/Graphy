@@ -17,9 +17,6 @@ namespace Graphy_Algorithm
 
 		// The object that we will run dijkstra on
 		Dijkstra dij;
-		
-		// NOTE FOR LATER: Create a heap-allocated 2D array to fill in,
-		// then copy over to the return value after running the algorithm.
 
 		std::vector<Graphy_Graph::AdjListNode> ** matrix = 
 			new std::vector<Graphy_Graph::AdjListNode> * [numNodes];

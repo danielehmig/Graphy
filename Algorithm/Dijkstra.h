@@ -9,7 +9,13 @@ namespace Graphy_Algorithm
 
 #define UNDEFINED_PREV -1
 #define INFINITE_DIST INT_MAX
-	class Dijkstra
+
+	/* ====================================================
+		CLASS: Dijkstra
+		--> Compute the shortest path between two nodes
+		in a graph.
+	==================================================== */
+	static class Dijkstra
 	{
 	public:
 
@@ -19,7 +25,7 @@ namespace Graphy_Algorithm
 		// where the node in the 0th position in the vector is the destination and the node
 		// in the (size-1)th position in the vector is the start node.
 		// NOTE: The path ordering in the vector is REVERSED.
-		std::vector<Graphy_Graph::AdjListNode> dijkstra(Graphy_Graph::Graph& graph, 
+		static std::vector<Graphy_Graph::AdjListNode> dijkstra(Graphy_Graph::Graph& graph, 
 														Graphy_Graph::AdjListNode& start, 
 														Graphy_Graph::AdjListNode& dst);
 	};

@@ -5,6 +5,11 @@
 
 namespace Graphy_Algorithm
 {
+	/* ====================================================
+		CLASS: APShortestPath
+		--> Compute the shortest path between all pairs
+		of nodes in a graph.
+	==================================================== */
 	static class APShortestPath
 	{
 	public:
