@@ -71,6 +71,8 @@
   <ItemGroup>
     <ClInclude Include="Algorithm\APShortestPath.h" />
     <ClInclude Include="Algorithm\Dijkstra.h" />
+    <ClInclude Include="Algorithm\GraphColor.h" />
+    <ClInclude Include="Algorithm\Mst.h" />
     <ClInclude Include="Algorithm\Tarjan.h" />
     <ClInclude Include="Graph\AdjList.h" />
     <ClInclude Include="Graph\AdjListNode.h" />
@@ -79,6 +81,8 @@
   <ItemGroup>
     <ClCompile Include="Algorithm\APShortestPath.cpp" />
     <ClCompile Include="Algorithm\Dijkstra.cpp" />
+    <ClCompile Include="Algorithm\GraphColor.cpp" />
+    <ClCompile Include="Algorithm\Mst.cpp" />
     <ClCompile Include="Algorithm\Tarjan.cpp" />
     <ClCompile Include="Graph\AdjList.cpp" />
     <ClCompile Include="Graph\AdjListNode.cpp" />

@@ -2,6 +2,7 @@
 #include "../Algorithm/Dijkstra.h"
 #include "../Algorithm/APShortestPath.h"
 #include "../Algorithm/Tarjan.h"
+#include "../Algorithm/Mst.h"
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
@@ -219,7 +220,7 @@ int main3(int argc, char** argv)
 }
 
 // Test All Pairs Shortest Path
-int main(int argc, char ** argv)
+int main5(int argc, char ** argv)
 {
 	Graph graph(13, false);
 
@@ -353,6 +354,42 @@ int main4(int argc, char ** argv)
 			std::cout << it2->getLabel() << "\n";
 		}
 	}
+	system("PAUSE");
+	return EXIT_SUCCESS;
+}
+
+// Test Minimum Spanning Tree
+// NOTE: SHIT STILL AIN'T WORKIN'
+int main(int argc, char ** argv)
+{
+	Graph graph(7, false);
+
+	graph.addNode("A");
+	graph.addNode("B");
+	graph.addNode("C");
+	graph.addNode("D");
+	graph.addNode("E");
+	graph.addNode("F");
+	graph.addNode("G");
+
+	graph.addEdge("A", "B", 5);
+	graph.addEdge("B", "C", 13);
+	graph.addEdge("A", "D", 17);
+	graph.addEdge("B", "D", 12);
+	graph.addEdge("B", "G", 8);
+	graph.addEdge("C", "G", 11);
+	graph.addEdge("C", "E", 6);
+	graph.addEdge("D", "F", 10);
+	graph.addEdge("D", "G", 8);
+	graph.addEdge("E", "G", 14);
+	graph.addEdge("F", "G", 4);
+
+
+	// Now, run the mst algy
+	Graph minSpan = Graphy_Algorithm::Mst::mst(graph);
+
+	// Now, just print out the minimum spanning tree
+	printGraphMain2(minSpan);
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }

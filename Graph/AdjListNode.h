@@ -4,6 +4,7 @@
 #include <string>
 namespace Graphy_Graph
 {
+
 	/* ====================================================
 		CLASS: AdjListNode
 		This class defines a node (vertex) in the current
@@ -54,6 +55,19 @@ namespace Graphy_Graph
 		// adjacency list is located.
 		int mIndex;
 
+	};
+}
+
+namespace std
+{
+	// Need to be able to hash AdjListNodes
+	template <>
+	struct hash < Graphy_Graph::AdjListNode >
+	{
+		size_t operator()(const Graphy_Graph::AdjListNode& node)
+		{
+			return hash<string>()(node.getLabel());
+		}
 	};
 }
 #endif
