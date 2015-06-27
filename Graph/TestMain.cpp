@@ -3,6 +3,7 @@
 #include "../Algorithm/APShortestPath.h"
 #include "../Algorithm/Tarjan.h"
 #include "../Algorithm/Mst.h"
+#include "../Algorithm/GraphColor.h"
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
@@ -358,9 +359,195 @@ int main4(int argc, char ** argv)
 	return EXIT_SUCCESS;
 }
 
-// Test Minimum Spanning Tree
-// NOTE: SHIT STILL AIN'T WORKIN'
+// Test (inefficient) graph coloring
 int main(int argc, char ** argv)
+{
+
+	Graph graph(38, false);
+
+	// Stupidly ugly code follows
+	
+	graph.addNode("1");
+	graph.addNode("2");
+	graph.addNode("3");
+	graph.addNode("4");
+	graph.addNode("5");
+	graph.addNode("6");
+	graph.addNode("7");
+	graph.addNode("8");
+	graph.addNode("9");
+	graph.addNode("10");
+	graph.addNode("11");
+	graph.addNode("12");
+	graph.addNode("13");
+	graph.addNode("14");
+	graph.addNode("15");
+	graph.addNode("16");
+	graph.addNode("17");
+	graph.addNode("18");
+	graph.addNode("19");
+	graph.addNode("20");
+	graph.addNode("21");
+	graph.addNode("22");
+	graph.addNode("23");
+	graph.addNode("24");
+	graph.addNode("25");
+	graph.addNode("26");
+	graph.addNode("27");
+	graph.addNode("28");
+	graph.addNode("29");
+	graph.addNode("30");
+	graph.addNode("31");
+	graph.addNode("32");
+	graph.addNode("33");
+	graph.addNode("34");
+	graph.addNode("35");
+	graph.addNode("36");
+	graph.addNode("37");
+	graph.addNode("38");
+
+	graph.addEdge("1", "5", 0);
+	graph.addEdge("1", "3", 0);
+	graph.addEdge("1", "29", 0);
+	graph.addEdge("1", "8", 0);
+	graph.addEdge("1", "2", 0);
+	graph.addEdge("1", "11", 0);
+
+	graph.addEdge("2", "3", 0);
+	graph.addEdge("2", "8", 0);
+	graph.addEdge("2", "6", 0);
+	graph.addEdge("2", "14", 0);
+	graph.addEdge("2", "27", 0);
+	graph.addEdge("2", "30", 0);
+	graph.addEdge("2", "26", 0);
+	graph.addEdge("2", "16", 0);
+	graph.addEdge("2", "31", 0);
+	graph.addEdge("2", "12", 0);
+	graph.addEdge("2", "34", 0);
+	graph.addEdge("2", "4", 0);
+
+	graph.addEdge("3", "4", 0);
+	graph.addEdge("3", "10", 0);
+	graph.addEdge("3", "15", 0);
+	graph.addEdge("3", "22", 0);
+	graph.addEdge("3", "17", 0);
+
+	graph.addEdge("4", "28", 0);
+	graph.addEdge("4", "9", 0);
+	graph.addEdge("4", "7", 0);
+	graph.addEdge("4", "5", 0);
+	graph.addEdge("4", "12", 0);
+	graph.addEdge("4", "32", 0);
+	graph.addEdge("4", "23", 0);
+	graph.addEdge("4", "18", 0);
+
+	graph.addEdge("5", "7", 0);
+	graph.addEdge("5", "20", 0);
+	graph.addEdge("5", "17", 0);
+	graph.addEdge("5", "19", 0);
+
+	graph.addEdge("6", "5", 0);
+
+	graph.addEdge("7", "9", 0);
+	graph.addEdge("7", "13", 0);
+	graph.addEdge("7", "21", 0);
+
+	graph.addEdge("8", "27", 0);
+	graph.addEdge("8", "10", 0);
+	graph.addEdge("8", "24", 0);
+	graph.addEdge("8", "15", 0);
+	graph.addEdge("8", "29", 0);
+
+	graph.addEdge("9", "11", 0);
+
+	graph.addEdge("10", "14", 0);
+	graph.addEdge("10", "37", 0);
+
+	graph.addEdge("11", "25", 0);
+	graph.addEdge("11", "32", 0);
+	graph.addEdge("11", "34", 0);
+	graph.addEdge("11", "13", 0);
+
+	graph.addEdge("12", "35", 0);
+	graph.addEdge("12", "16", 0);
+	graph.addEdge("12", "26", 0);
+
+	graph.addEdge("13", "18", 0);
+	graph.addEdge("13", "35", 0);
+	graph.addEdge("13", "19", 0);
+
+	graph.addEdge("14", "20", 0);
+	graph.addEdge("15", "36", 0);
+	graph.addEdge("17", "33", 0);
+	graph.addEdge("18", "25", 0);
+	graph.addEdge("19", "23", 0);
+	graph.addEdge("19", "21", 0);
+	graph.addEdge("20", "37", 0);
+	graph.addEdge("21", "31", 0);
+
+	graph.addEdge("22", "13", 0);
+	graph.addEdge("22", "24", 0);
+	graph.addEdge("22", "36", 0);
+
+	graph.addEdge("28", "25", 0);
+
+	graph.addEdge("27", "30", 0);
+
+	graph.addEdge("29", "33", 0);
+	graph.addEdge("31", "38", 0);
+	graph.addEdge("34", "38", 0);
+	
+
+	/*graph.addNode("A");
+	graph.addNode("B");
+	graph.addNode("C");
+	graph.addNode("D");
+	graph.addNode("E");
+	graph.addNode("F");
+
+	graph.addEdge("A", "B", 0);
+	graph.addEdge("A", "C", 0);
+	graph.addEdge("A", "D", 0);
+	graph.addEdge("A", "E", 0);
+
+	graph.addEdge("B", "C", 0);
+	graph.addEdge("B", "D", 0);
+	graph.addEdge("B", "F", 0);
+
+	graph.addEdge("C", "E", 0);
+	graph.addEdge("C", "F", 0);
+
+	graph.addEdge("D", "E", 0);
+	graph.addEdge("D", "F", 0);
+
+	graph.addEdge("E", "F", 0);*/
+
+	std::vector<struct Graphy_Algorithm::ColorNode> coloredNodes = 
+		Graphy_Algorithm::GraphColor::colorGraph(graph, 3);
+
+	if (!coloredNodes.empty())
+	{
+		std::cout << "Graph is 3-colorable\n";
+
+		for (std::vector<struct Graphy_Algorithm::ColorNode>::iterator it = coloredNodes.begin();
+			it != coloredNodes.end(); it++)
+		{
+			std::cout << "Node: " << it->node.getLabel() << "; Color: " << it->color << "\n";
+		}
+	}
+	else
+	{
+		std::cout << "Graph is NOT 3-colorable\n";
+	}
+
+	printGraphMain2(graph);
+	
+	system("PAUSE");
+	return EXIT_SUCCESS;
+}
+
+// Test Minimum Spanning Tree
+int main6(int argc, char ** argv)
 {
 	Graph graph(7, false);
 

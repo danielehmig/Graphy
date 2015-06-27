@@ -4,7 +4,7 @@ namespace Graphy_Algorithm
 {
 	std::vector<struct ColorNode> GraphColor::colorGraph(Graphy_Graph::Graph& graph, int n)
 	{
-		std::vector<struct ColorNode> nodes(graph.numNodes());
+		std::vector<struct ColorNode> nodes;
 		std::vector<Graphy_Graph::AdjListNode> theRealNodes = graph.getAllNodes();
 		for (std::vector<Graphy_Graph::AdjListNode>::iterator it = theRealNodes.begin();
 				it != theRealNodes.end(); it++)
@@ -38,13 +38,12 @@ namespace Graphy_Algorithm
 		struct ColorNode * currNode = &nodes[i];
 
 		currNode->colorsTried = 0;
-		// NOTE: Condition here might be off by one
 		while (currNode->colorsTried < n)
 		{
 			currNode->color = currNode->colorsTried;
 
 			// Now, check the neighbors to see if this color works
-			bool * colors = new bool[n];
+			bool * colors = new bool[n]();
 			Graphy_Graph::AdjList nebs = graph.connectedEdges(currNode->node);
 			for (Graphy_Graph::AdjList::iterator it = nebs.begin(); it != nebs.end(); it++)
 			{
@@ -76,7 +75,7 @@ namespace Graphy_Algorithm
 
 				if (it == nebs.end())
 				{
-					// We successfully colored the neigbors, so we can exit the loop
+					// We successfully colored the neighbors, so we can exit the loop
 					break;
 				}
 			}
@@ -84,8 +83,10 @@ namespace Graphy_Algorithm
 			delete[] colors;
 		}
 
-		if (currNode->colorsTried == n)
+		if (currNode->colorsTried >= n)
 		{
+			currNode->color = UNCOLORED;
+			currNode->colorsTried = 0;
 			return false;
 		}
 		else
