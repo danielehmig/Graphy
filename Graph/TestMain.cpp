@@ -360,7 +360,7 @@ int main4(int argc, char ** argv)
 }
 
 // Test (inefficient) graph coloring
-int main(int argc, char ** argv)
+int main69(int argc, char ** argv)
 {
 
 	Graph graph(38, false);

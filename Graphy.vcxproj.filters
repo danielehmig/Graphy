@@ -39,6 +39,12 @@
     <ClInclude Include="Algorithm\GraphColor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Interface\Expander.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\InterfaceUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graph\AdjListNode.cpp">
@@ -66,6 +72,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Algorithm\GraphColor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\GraphyApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\Expander.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\InterfaceUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
