@@ -2,6 +2,7 @@
 #define _EXPANDER_H_
 
 #include "cinder/app/AppBasic.h"
+#include "../Interface/InterfaceUtil.h"
 
 #define MAX_ROTATION 90.0f
 
@@ -34,7 +35,7 @@ namespace Graphy_App
 
 		// Called on a mouse click; determines if the mouse click was
 		// on the triangle
-		void checkClick(ci::Vec2f& mouseCoords);
+		bool checkClick(ci::Vec2f& mouseCoords);
 
 	private:
 

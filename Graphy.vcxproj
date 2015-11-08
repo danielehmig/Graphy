@@ -77,8 +77,13 @@
     <ClInclude Include="Graph\AdjList.h" />
     <ClInclude Include="Graph\AdjListNode.h" />
     <ClInclude Include="Graph\Graph.h" />
+    <ClInclude Include="Interface\Button.h" />
     <ClInclude Include="Interface\Expander.h" />
+    <ClInclude Include="Interface\GraphyApp.h" />
     <ClInclude Include="Interface\InterfaceUtil.h" />
+    <ClInclude Include="Interface\LineItem.h" />
+    <ClInclude Include="Interface\Panel.h" />
+    <ClInclude Include="Interface\Theme.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm\APShortestPath.cpp" />
@@ -90,9 +95,12 @@
     <ClCompile Include="Graph\AdjListNode.cpp" />
     <ClCompile Include="Graph\Graph.cpp" />
     <ClCompile Include="Graph\TestMain.cpp" />
+    <ClCompile Include="Interface\Button.cpp" />
     <ClCompile Include="Interface\Expander.cpp" />
     <ClCompile Include="Interface\GraphyApp.cpp" />
     <ClCompile Include="Interface\InterfaceUtil.cpp" />
+    <ClCompile Include="Interface\LineItem.cpp" />
+    <ClCompile Include="Interface\Panel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,6 +8,8 @@ namespace Graphy_App
 	static class InterfaceUtil
 	{
 	public:
+		static const unsigned int FPS = 60.0f;
+
 		static ci::Vec2f worldToWindow(ci::Vec2f& coords);
 		static ci::Vec2f windowToWorld(ci::Vec2f& coords);
 	};

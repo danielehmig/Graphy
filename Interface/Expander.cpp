@@ -1,5 +1,5 @@
 #include "../Interface/Expander.h"
-#include "../Interface/InterfaceUtil.h"
+
 
 namespace Graphy_App
 {
@@ -39,7 +39,7 @@ namespace Graphy_App
 		currentRotation = 0.0f;
 
 		// rotates 90 degrees in 1/2 second (when framerate is at 60)
-		rotationIncr = 3.0f;
+		rotationIncr = 90.0f / (InterfaceUtil::FPS / 2.0f);
 
 		// Determine points of the triangle using a spell found deep in the
 		// basement of the White Tower in Tar Valon
@@ -149,7 +149,7 @@ namespace Graphy_App
 	/* ====================================================
 		checkClick(Vec2f)
 	==================================================== */
-	void Expander::checkClick(ci::Vec2f& coords)
+	bool Expander::checkClick(ci::Vec2f& coords)
 	{
 		// Draw a line from center of "onClick zone" to coords
 		// Check if line length exceeds radius
@@ -174,6 +174,9 @@ namespace Graphy_App
 			default:
 				break;
 			}
+
+			return true;
 		}
+		return false;
 	}
 }

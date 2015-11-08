@@ -1,24 +1,5 @@
-#include "cinder/app/AppBasic.h"
-#include "Expander.h"
 
-using namespace ci;
-using namespace ci::app;
-
-class GraphyApp : public AppBasic
-{
-public:
-	GraphyApp();
-	void prepareSettings(Settings *settings);
-	void setup();
-	void update();
-	void draw();
-
-	void mouseDown(MouseEvent me);
-	void mouseUp(MouseEvent me);
-
-private:
-	Graphy_App::Expander exp;
-};
+#include "GraphyApp.h"
 
 GraphyApp::GraphyApp()
 {
@@ -28,18 +9,27 @@ GraphyApp::GraphyApp()
 void GraphyApp::prepareSettings(Settings *settings)
 {
 	settings->setWindowSize(1024, 768);
-	settings->setFrameRate(60.0f);
+	settings->setFrameRate((float) Graphy_App::InterfaceUtil::FPS);
 }
 
 void GraphyApp::setup()
 {
-	exp = Graphy_App::Expander(Vec2f(500.0f, 500.0f), 
-		ci::Color(1.0f, 0.0f, 0.0f), 10.0f, false);
+	normalCursor = LoadCursor(NULL, MAKEINTRESOURCE(32512));
+	handCursor = LoadCursor(NULL, MAKEINTRESOURCE(32649));
+
+	panel = Graphy_App::Panel(Vec2f(50.0f, 50.0f), 100, 25, Color(0.9686f, 0.5961f, 0.1216f), false);
+	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button");
+	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button1");
+	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button2");
+	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button3");
+	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button4");
+	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button5");
+	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button6");
 }
 
 void GraphyApp::update()
 {
-	exp.update();
+	panel.update();
 }
 
 void GraphyApp::draw()
@@ -47,7 +37,7 @@ void GraphyApp::draw()
 	gl::clear(Color(0, 0, 0), true);
 	glDisable(GL_TEXTURE_2D);
 
-	exp.draw();
+	panel.draw();
 
 	//gl::color(Color(1.0f, 1.0f, 1.0f));
 
@@ -63,12 +53,33 @@ void GraphyApp::mouseDown(MouseEvent me)
 {
 	Vec2i pos = me.getPos();
 
-	exp.checkClick(Vec2f(pos.x, pos.y));
+	if (me.isLeft())
+	{
+		panel.checkClick(Vec2f(pos.x, pos.y));
+	}
 }
 
 void GraphyApp::mouseUp(MouseEvent me)
 {
 
+}
+
+void GraphyApp::mouseMove(MouseEvent me)
+{
+	Vec2i pos = me.getPos();
+	if (panel.checkHover(Vec2f(pos.x, pos.y)))
+	{
+		::SetCursor(handCursor);
+	}
+	else
+	{
+		::SetCursor(normalCursor);
+	}
+}
+
+void GraphyApp::receiveLineItemEvent(const Graphy_App::LineItem& eventItem)
+{
+	// poop
 }
 
 CINDER_APP_BASIC(GraphyApp, RendererGl)
