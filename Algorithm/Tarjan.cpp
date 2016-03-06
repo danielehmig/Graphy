@@ -2,6 +2,9 @@
 
 namespace Graphy_Algorithm
 {
+	/* ====================================================
+		tarjan(Graph)
+	==================================================== */
 	std::vector<std::vector<Graphy_Graph::AdjListNode>> Tarjan::tarjan(Graphy_Graph::Graph& graph)
 	{
 		mGraph = graph;
@@ -39,6 +42,9 @@ namespace Graphy_Algorithm
 		return mScc;
 	}
 
+	/* ====================================================
+		strongConnect(int)
+	==================================================== */
 	void Tarjan::strongConnect(int ind)
 	{
 		// Set the depth index for v to the smallest unused index

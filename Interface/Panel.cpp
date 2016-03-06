@@ -4,28 +4,31 @@
 
 namespace Graphy_App
 {
+	/* =======================================================
+		Panel()
+	======================================================= */
 	Panel::Panel()
 	{
 
 	}
 
+	/* =======================================================
+		Panel(Vec2f, size_t, size_t, Color, bool)
+	======================================================= */
 	Panel::Panel(ci::Vec2f& topLeft, std::size_t width,
 		std::size_t minHeight, ci::Color c, bool e)
 	{
 		this->topLeft = topLeft;
 		this->width = width;
 		color = c;
-		if (!e)
-		{
-			currentState = COLL;
-		}
-		else
-		{
-			currentState = EXP;
-		}
+
+		panelClicked = false;
+		dragging = false;
+
+		currentState = (e ? EXP : COLL);
 
 		// Initially, the height of the panel when expanded is the
-		// same as it is collapsed
+		// same as it is when collapsed
 		collapsedHeight = expandedHeight = currentHeight = minHeight;
 
 		ci::Vec2f expCenter;
@@ -43,12 +46,25 @@ namespace Graphy_App
 		}
 	}
 
+	/* =======================================================
+		checkClick(Vec2f)
+	======================================================= */
 	bool Panel::checkClick(ci::Vec2f& coords)
 	{
-		bool retVal = false;
+		
+		if (!(coords.x > topLeft.x && 
+			coords.x < (topLeft.x + width) && 
+			coords.y > topLeft.y && 
+			coords.y < (topLeft.y + currentHeight)))
+		{
+			return false;
+		}
+
+		panelClicked = true;
+
 		if (expander.checkClick(coords))
 		{
-			retVal = true;
+			panelClicked = false;
 			switch (currentState)
 			{
 			case COLL:
@@ -76,15 +92,18 @@ namespace Graphy_App
 				{
 					if (lineItems[i]->checkClick(coords))
 					{
-						retVal = true;
+						panelClicked = false;
 					}
 				}
 			}
 		}
 
-		return retVal;
+		return true;
 	}
 
+	/* =======================================================
+		checkHover(Vec2f)
+	======================================================= */
 	bool Panel::checkHover(ci::Vec2f& coords)
 	{
 		// We just want to check the LineItems
@@ -107,6 +126,9 @@ namespace Graphy_App
 		return retVal;
 	}
 
+	/* =======================================================
+		addLineItem(LineItem::type, string)
+	======================================================= */
 	void Panel::addLineItem(LineItem::type typ, std::string l)
 	{
 		float tl_y = this->topLeft.y + (collapsedHeight * (lineItems.size() + 1)) + ((lineItems.size() + 1) * PADDING);
@@ -130,7 +152,10 @@ namespace Graphy_App
 									   l, 
 									   width, 
 									   this->collapsedHeight));
-
+			if (currentState == EXP)
+			{
+				currentHeight = expandedHeight;
+			}
 			break;
 		case LineItem::CHECKBOX:
 			break;
@@ -141,11 +166,34 @@ namespace Graphy_App
 		}
 	}
 
+	/* =======================================================
+		removeLineItem(size_t)
+	======================================================= */
 	void Panel::removeLineItem(std::size_t row)
 	{
 		// !!!!!!!!!!!!!!! DELETE THE DYNAMICALLY ALLOCATED OBJECTS !!!!!!!!!!!!!!!!!!
 	}
 
+	/* =======================================================
+		updatePos(Vec2f)
+	======================================================= */
+	void Panel::updatePos(ci::Vec2f& delta)
+	{
+		topLeft.x += delta.x;
+		topLeft.y += delta.y;
+
+		expander.updatePos(delta);
+
+		std::vector<LineItem*>::iterator it = lineItems.begin();
+		for (; it != lineItems.end(); it++)
+		{
+			(*it)->updatePos(delta);
+		}
+	}
+
+	/* =======================================================
+		update()
+	======================================================= */
 	void Panel::update()
 	{
 		if (currentState == GROW)
@@ -171,11 +219,15 @@ namespace Graphy_App
 		expander.update();
 	}
 
+	/* =======================================================
+		draw()
+	======================================================= */
 	void Panel::draw()
 	{
 		ci::Rectf rect(topLeft.x, topLeft.y, topLeft.x + width, topLeft.y + currentHeight);
 		cinder::gl::color(color);
 		cinder::gl::drawSolidRect(rect);
+		
 		expander.draw();
 
 		std::size_t i = 0;

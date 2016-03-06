@@ -2,6 +2,9 @@
 
 namespace Graphy_Algorithm
 {
+	/* ====================================================
+		mst(Graph)
+	==================================================== */
 	Graphy_Graph::Graph Mst::mst(Graphy_Graph::Graph& orig)
 	{
 		// Create the initial list of edges (of our custom type)
@@ -79,6 +82,11 @@ namespace Graphy_Algorithm
 		return ret;
 	}
 
+	/* ====================================================
+		unionSets(unordered_set<AdjListNode>,
+				  unordered_set<AdjListNode>,
+				  vector<unordered_set<AdjListNode>>)
+	==================================================== */
 	void Mst::unionSets(std::unordered_set<Graphy_Graph::AdjListNode>& a,
 		std::unordered_set<Graphy_Graph::AdjListNode>& b,
 		std::vector<std::unordered_set<Graphy_Graph::AdjListNode>>& forests)
@@ -97,6 +105,10 @@ namespace Graphy_Algorithm
 		}
 	}
 
+	/* ====================================================
+		setEqual(unordered_set<AdjListNode>,
+				 unordered_set<AdjListNode>)
+	==================================================== */
 	bool Mst::setEqual(std::unordered_set<Graphy_Graph::AdjListNode> a, 
 					std::unordered_set<Graphy_Graph::AdjListNode> b)
 	{
@@ -128,6 +140,9 @@ namespace Graphy_Algorithm
 		return true;
 	}
 
+	/* ====================================================
+		eraseNode(vector<AdjListNode>, AdjListNode)
+	==================================================== */
 	void Mst::eraseNode(std::vector<Graphy_Graph::AdjListNode>& nodes, Graphy_Graph::AdjListNode& node)
 	{
 		for (std::vector<Graphy_Graph::AdjListNode>::iterator it = nodes.begin();

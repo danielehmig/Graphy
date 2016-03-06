@@ -1,32 +1,425 @@
-﻿Build started 11/8/2015 6:21:43 PM.
-     1>Project "C:\Users\djehm_000\Documents\Computer Science\Personal Project Files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\Projects\Graphy\Graphy\Graphy.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\..\boost /I..\..\..\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Interface\Panel.cpp
-         Panel.cpp
-     1>c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(11): warning C4244: 'initializing' : conversion from 'float' to 'const unsigned int', possible loss of data
-     1>c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(15): warning C4091: 'static ' : ignored on left of 'Graphy_App::InterfaceUtil' when no variable is declared
-     1>c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\panel.cpp(36): warning C4244: 'argument' : conversion from 'size_t' to 'float', possible loss of data
-     1>c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\panel.cpp(39): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\panel.cpp(119): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\djehm_000\Documents\Computer Science\Personal Project Files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\Projects\Graphy\Debug\Graphy.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\lib\msw\x86 "cinder-v120_d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBCMT /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\djehm_000\Documents\Computer Science\Personal Project Files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\Projects\Graphy\Debug\Graphy.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\djehm_000\Documents\Computer Science\Personal Project Files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\Projects\Graphy\Debug\Graphy.lib" /MACHINE:X86 Debug\APShortestPath.obj
-         Debug\Dijkstra.obj
-         Debug\GraphColor.obj
-         Debug\Mst.obj
-         Debug\Tarjan.obj
-         Debug\AdjList.obj
-         Debug\AdjListNode.obj
-         Debug\Graph.obj
-         Debug\TestMain.obj
-         Debug\Button.obj
-         Debug\Expander.obj
-         Debug\GraphyApp.obj
-         Debug\InterfaceUtil.obj
-         Debug\LineItem.obj
-         Debug\Panel.obj
-         Graphy.vcxproj -> C:\Users\djehm_000\Documents\Computer Science\Personal Project Files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\Projects\Graphy\Debug\Graphy.exe
-     1>Done Building Project "C:\Users\djehm_000\Documents\Computer Science\Personal Project Files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\Projects\Graphy\Graphy\Graphy.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:08.30
+﻿  Panel.cpp
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(11): warning C4244: 'initializing': conversion from 'float' to 'const unsigned int', possible loss of data
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(15): warning C4091: 'static ': ignored on left of 'Graphy_App::InterfaceUtil' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\panel.cpp(36): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\panel.cpp(39): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\panel.cpp(119): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(349): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(336): note: see declaration of 'std::_Uninitialized_copy0'
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(191): note: see reference to function template instantiation '_FwdIt std::uninitialized_copy<I,boost::shared_ptr<void>*>(_InIt,_InIt,_FwdIt)' being compiled
+          with
+          [
+              _FwdIt=boost::shared_ptr<void> *,
+              I=boost::shared_ptr<void> *,
+              _InIt=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(204): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(203): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(294): note: while compiling class template member function 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)'
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(302): note: see reference to function template instantiation 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(53): note: see reference to class template instantiation 'boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(55): note: see reference to class template instantiation 'boost::signals2::detail::garbage_collecting_lock<Mutex>' being compiled
+  LineItem.cpp
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(349): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(336): note: see declaration of 'std::_Uninitialized_copy0'
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(191): note: see reference to function template instantiation '_FwdIt std::uninitialized_copy<I,boost::shared_ptr<void>*>(_InIt,_InIt,_FwdIt)' being compiled
+          with
+          [
+              _FwdIt=boost::shared_ptr<void> *,
+              I=boost::shared_ptr<void> *,
+              _InIt=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(204): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(203): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(294): note: while compiling class template member function 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)'
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(302): note: see reference to function template instantiation 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(53): note: see reference to class template instantiation 'boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(55): note: see reference to class template instantiation 'boost::signals2::detail::garbage_collecting_lock<Mutex>' being compiled
+  InterfaceUtil.cpp
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(11): warning C4244: 'initializing': conversion from 'float' to 'const unsigned int', possible loss of data
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(15): warning C4091: 'static ': ignored on left of 'Graphy_App::InterfaceUtil' when no variable is declared
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(349): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(336): note: see declaration of 'std::_Uninitialized_copy0'
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(191): note: see reference to function template instantiation '_FwdIt std::uninitialized_copy<I,boost::shared_ptr<void>*>(_InIt,_InIt,_FwdIt)' being compiled
+          with
+          [
+              _FwdIt=boost::shared_ptr<void> *,
+              I=boost::shared_ptr<void> *,
+              _InIt=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(204): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(203): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(294): note: while compiling class template member function 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)'
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(302): note: see reference to function template instantiation 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(53): note: see reference to class template instantiation 'boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(55): note: see reference to class template instantiation 'boost::signals2::detail::garbage_collecting_lock<Mutex>' being compiled
+  GraphyApp.cpp
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(11): warning C4244: 'initializing': conversion from 'float' to 'const unsigned int', possible loss of data
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(15): warning C4091: 'static ': ignored on left of 'Graphy_App::InterfaceUtil' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\graphyapp.cpp(58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\graphyapp.cpp(70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(349): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(336): note: see declaration of 'std::_Uninitialized_copy0'
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(191): note: see reference to function template instantiation '_FwdIt std::uninitialized_copy<I,boost::shared_ptr<void>*>(_InIt,_InIt,_FwdIt)' being compiled
+          with
+          [
+              _FwdIt=boost::shared_ptr<void> *,
+              I=boost::shared_ptr<void> *,
+              _InIt=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(204): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(203): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(294): note: while compiling class template member function 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)'
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(302): note: see reference to function template instantiation 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(53): note: see reference to class template instantiation 'boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(55): note: see reference to class template instantiation 'boost::signals2::detail::garbage_collecting_lock<Mutex>' being compiled
+  Expander.cpp
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(11): warning C4244: 'initializing': conversion from 'float' to 'const unsigned int', possible loss of data
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\interfaceutil.h(15): warning C4091: 'static ': ignored on left of 'Graphy_App::InterfaceUtil' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\interface\expander.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(349): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(336): note: see declaration of 'std::_Uninitialized_copy0'
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(191): note: see reference to function template instantiation '_FwdIt std::uninitialized_copy<I,boost::shared_ptr<void>*>(_InIt,_InIt,_FwdIt)' being compiled
+          with
+          [
+              _FwdIt=boost::shared_ptr<void> *,
+              I=boost::shared_ptr<void> *,
+              _InIt=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(204): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(203): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(294): note: while compiling class template member function 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)'
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(302): note: see reference to function template instantiation 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(53): note: see reference to class template instantiation 'boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(55): note: see reference to class template instantiation 'boost::signals2::detail::garbage_collecting_lock<Mutex>' being compiled
+  Button.cpp
+  NOTE: Use of this header (bool_trait_def.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+  NOTE: Use of this header (template_arity_spec.hpp) is deprecated
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(349): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory(336): note: see declaration of 'std::_Uninitialized_copy0'
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(191): note: see reference to function template instantiation '_FwdIt std::uninitialized_copy<I,boost::shared_ptr<void>*>(_InIt,_InIt,_FwdIt)' being compiled
+          with
+          [
+              _FwdIt=boost::shared_ptr<void> *,
+              I=boost::shared_ptr<void> *,
+              _InIt=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(178): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_rai<I,false>(I,I,boost::shared_ptr<void> *,const boost::integral_constant<bool,false> &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(204): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(203): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<I>(I,I,boost::shared_ptr<void> *,std::random_access_iterator_tag)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(296): note: see reference to function template instantiation 'void boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::copy_impl<boost::shared_ptr<void>*>(I,I,boost::shared_ptr<void> *)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>,
+              I=boost::shared_ptr<void> *
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(294): note: while compiling class template member function 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)'
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\detail\auto_buffer.hpp(302): note: see reference to function template instantiation 'boost::shared_ptr<void> *boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>::move_to_new_buffer(unsigned int,const boost::true_type &)' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(53): note: see reference to class template instantiation 'boost::signals2::detail::auto_buffer<boost::shared_ptr<void>,boost::signals2::detail::store_n_objects<10>,boost::signals2::detail::default_grow_policy,std::allocator<T>>' being compiled
+          with
+          [
+              T=boost::shared_ptr<void>
+          ]
+  c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\boost\boost\signals2\connection.hpp(55): note: see reference to class template instantiation 'boost::signals2::detail::garbage_collecting_lock<Mutex>' being compiled
+  TestMain.cpp
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\dijkstra.h(31): warning C4091: 'static ': ignored on left of 'Graphy_Algorithm::Dijkstra' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\apshortestpath.h(22): warning C4091: 'static ': ignored on left of 'Graphy_Algorithm::APShortestPath' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\mst.h(37): warning C4091: 'static ': ignored on left of 'Graphy_Algorithm::Mst' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\graph\testmain.cpp(274): warning C4018: '<': signed/unsigned mismatch
+  Graph.cpp
+  AdjListNode.cpp
+  AdjList.cpp
+  Tarjan.cpp
+  Mst.cpp
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\mst.h(37): warning C4091: 'static ': ignored on left of 'Graphy_Algorithm::Mst' when no variable is declared
+  GraphColor.cpp
+  Dijkstra.cpp
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\dijkstra.h(31): warning C4091: 'static ': ignored on left of 'Graphy_Algorithm::Dijkstra' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\dijkstra.cpp(124): warning C4018: '>': signed/unsigned mismatch
+  APShortestPath.cpp
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\apshortestpath.h(22): warning C4091: 'static ': ignored on left of 'Graphy_Algorithm::APShortestPath' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\dijkstra.h(31): warning C4091: 'static ': ignored on left of 'Graphy_Algorithm::Dijkstra' when no variable is declared
+c:\users\djehm_000\documents\computer science\personal project files\cinder_0.8.6_vc2013\cinder_0.8.6_vc2013\projects\graphy\graphy\algorithm\apshortestpath.cpp(19): warning C4101: 'dij': unreferenced local variable
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'libboost_filesystem-vc140-mt-sgd-1_60.lib'

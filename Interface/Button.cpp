@@ -1,11 +1,18 @@
 #include "Button.h"
 namespace Graphy_App
 {
+	/* ====================================================
+		Button()
+	==================================================== */
 	Button::Button()
 	{
 
 	}
 
+	/* ====================================================
+		Button(Color, Color, Color, Vec2f, string, size_t,
+			   size_t)
+	==================================================== */
 	Button::Button(cinder::Color bc, cinder::Color fc, cinder::Color ufc, ci::Vec2f& tl,
 		std::string l, std::size_t w, std::size_t h) : LineItem(tl, l, w, h)
 	{
@@ -24,6 +31,9 @@ namespace Graphy_App
 		currentState = NORMAL;
 	}
 
+	/* ====================================================
+		checkClick(Vec2f)
+	==================================================== */
 	bool Button::checkClick(ci::Vec2f& coords)
 	{
 		if (inBounds(coords))
@@ -35,6 +45,9 @@ namespace Graphy_App
 		return false;
 	}
 
+	/* ====================================================
+		checkHover(Vec2f)
+	==================================================== */
 	bool Button::checkHover(ci::Vec2f& coords)
 	{
 		if (inBounds(coords))
@@ -52,6 +65,9 @@ namespace Graphy_App
 		return false;
 	}
 
+	/* ====================================================
+		inBounds(Vec2f)
+	==================================================== */
 	bool Button::inBounds(ci::Vec2f& coords)
 	{
 		if (coords.x > topLeft.x && coords.x < (topLeft.x + get_width()))
@@ -65,6 +81,9 @@ namespace Graphy_App
 		return false;
 	}
 
+	/* ====================================================
+		changeState(bool)
+	==================================================== */
 	void Button::changeState(bool click)
 	{
 		// State was changed by a click
@@ -85,6 +104,18 @@ namespace Graphy_App
 		}
 	}
 
+	/* ====================================================
+		updatePos(Vec2f)
+	==================================================== */
+	void Button::updatePos(ci::Vec2f& delta)
+	{
+		this->topLeft.x += delta.x;
+		this->topLeft.y += delta.y;
+	}
+
+	/* ====================================================
+		update()
+	==================================================== */
 	void Button::update()
 	{
 		if (animating)
@@ -135,6 +166,9 @@ namespace Graphy_App
 		
 	}
 
+	/* ====================================================
+		draw()
+	==================================================== */
 	void Button::draw()
 	{
 		// Draw the button's border
@@ -148,9 +182,10 @@ namespace Graphy_App
 		cinder::gl::drawSolidRect(rect);
 
 		// Now, draw the button's text
-		ci::Vec2f label_pos(topLeft.x + (width / 4.0), topLeft.y + (height / 3.0f));
+		ci::Vec2f label_pos(topLeft.x + (this->width / 2.0f), topLeft.y);
+		label_pos.y += ((this->height - labelFont.getSize()) / 2.0f);
 		cinder::gl::enableAlphaBlending();
-		cinder::gl::drawString(this->label, label_pos, cinder::Color(0.0f, 0.0f, 0.0f), labelFont);
+		cinder::gl::drawStringCentered(label, label_pos, cinder::Color(0.0f, 0.0f, 0.0f), labelFont);
 	}
 
 }

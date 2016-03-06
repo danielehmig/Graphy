@@ -2,6 +2,9 @@
 
 namespace Graphy_App
 {
+	/* ====================================================
+		worldToWindow(Vec2f)
+	==================================================== */
 	ci::Vec2f InterfaceUtil::worldToWindow(ci::Vec2f& coords)
 	{
 		ci::Vec2f retVal;
@@ -18,6 +21,9 @@ namespace Graphy_App
 		return retVal;
 	}
 
+	/* ====================================================
+		windowToWorld(Vec2f)
+	==================================================== */
 	ci::Vec2f InterfaceUtil::windowToWorld(ci::Vec2f& coords)
 	{
 		ci::Vec2f retVal;

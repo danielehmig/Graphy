@@ -2,6 +2,9 @@
 
 namespace Graphy_Algorithm
 {
+	/* ====================================================
+		colorGraph(Graph, int)
+	==================================================== */
 	std::vector<struct ColorNode> GraphColor::colorGraph(Graphy_Graph::Graph& graph, int n)
 	{
 		std::vector<struct ColorNode> nodes;
@@ -33,6 +36,9 @@ namespace Graphy_Algorithm
 		return nodes;
 	}
 
+	/* ====================================================
+		colorHelper(vector<ColorNode>, Graph, int, int)
+	==================================================== */
 	bool GraphColor::colorHelper(std::vector<struct ColorNode>& nodes, Graphy_Graph::Graph& graph, int n, int i)
 	{
 		struct ColorNode * currNode = &nodes[i];

@@ -64,7 +64,7 @@ namespace std
 	template <>
 	struct hash < Graphy_Graph::AdjListNode >
 	{
-		size_t operator()(const Graphy_Graph::AdjListNode& node)
+		size_t operator()(const Graphy_Graph::AdjListNode& node) const
 		{
 			return hash<string>()(node.getLabel());
 		}

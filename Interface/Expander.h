@@ -1,7 +1,7 @@
 #ifndef _EXPANDER_H_
 #define _EXPANDER_H_
 
-#include "cinder/app/AppBasic.h"
+#include "cinder/App/AppBasic.h"
 #include "../Interface/InterfaceUtil.h"
 
 #define MAX_ROTATION 90.0f
@@ -32,6 +32,10 @@ namespace Graphy_App
 
 		// Just draw the triangle with the current value of its vertices
 		void draw();
+
+		// Update the position of the expander, for example, in the
+		// event that the surrounding panel is moved
+		void updatePos(ci::Vec2f& delta);
 
 		// Called on a mouse click; determines if the mouse click was
 		// on the triangle
@@ -70,6 +74,10 @@ namespace Graphy_App
 
 		// Obvious
 		state currentState;
+
+		// Private helper member function to immediately rotate the
+		// expander to its fully-expanded state (i.e. 90.0f)
+		void rotateToMax();
 	};
 }
 
