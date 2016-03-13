@@ -30,9 +30,10 @@ void GraphyApp::setup()
 
 	panel = Graphy_App::Panel(Vec2f(50.0f, 50.0f), 150, 30, Color(0.9686f, 0.5961f, 0.1216f), true);
 	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button");
+	
+	//panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button2");
+	panel.addLineItem(Graphy_App::LineItem::CHECKBOX, "Check Box");
 	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button1");
-	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button2");
-	panel.addLineItem(Graphy_App::LineItem::BUTTON, "Button3");
 
 	panel2 = Graphy_App::Panel(Vec2f(250.0f, 100.0f), 125, 25, Color(0.3f, 0.3f, 0.9f), false);
 	panel2.addLineItem(Graphy_App::LineItem::BUTTON, "Button1");
@@ -137,18 +138,37 @@ void GraphyApp::mouseDrag(MouseEvent me)
 		deltaX = pos.x - prevMouseX;
 		deltaY = pos.y - prevMouseY;
 	}
+
+	bool setPrev = true;
+
 	if (panel.isDragging())
 	{
-		panel.updatePos(ci::Vec2f(deltaX, deltaY));
+		if (!panel.updatePos(ci::Vec2f(deltaX, deltaY)))
+		{
+			setPrev = false;
+		}
 	}
 	else if (panel2.isDragging())
 	{
-		panel2.updatePos(ci::Vec2f(deltaX, deltaY));
+		if (!panel2.updatePos(ci::Vec2f(deltaX, deltaY)))
+		{
+			setPrev = false;
+		}
 	}
 
-	prevMouseSet = true;
-	prevMouseX = pos.x;
-	prevMouseY = pos.y;
+	if (!setPrev)
+	{
+		prevMouseSet = false;
+		int posX = (prevMouseX >= 0 ? (int)(prevMouseX + 0.5f) : (int)(prevMouseX - 0.5f));
+		int posY = (prevMouseY >= 0 ? (int)(prevMouseY + 0.5f) : (int)(prevMouseY - 0.5f));
+		SetPhysicalCursorPos(posX + ci::app::getWindowPos().x, posY + ci::app::getWindowPos().y);
+	}
+	else
+	{
+		prevMouseSet = true;
+		prevMouseX = pos.x;
+		prevMouseY = pos.y;
+	}
 }
 
 /* ========================================================

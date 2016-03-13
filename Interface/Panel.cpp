@@ -1,4 +1,5 @@
 #include "Button.h"
+#include "CheckBox.h"
 #include "Panel.h"
 #include "Theme.h"
 
@@ -87,7 +88,7 @@ namespace Graphy_App
 			{
 				// Check to see if the LineItem is even visible
 				int space = currentHeight - collapsedHeight - PADDING;
-				int needed = (PADDING * (i + 1)) + (collapsedHeight * (i + 2));
+				int needed = (PADDING * (i + 1)) + (collapsedHeight * (i + 1));
 				if (space >= needed)
 				{
 					if (lineItems[i]->checkClick(coords))
@@ -113,7 +114,7 @@ namespace Graphy_App
 		{
 			// Check to see if the LineItem is even visible
 			int space = currentHeight - collapsedHeight - PADDING;
-			int needed = (PADDING * (i + 1)) + (collapsedHeight * (i + 2));
+			int needed = (PADDING * (i + 1)) + (collapsedHeight * (i + 1));
 			if (space >= needed)
 			{
 				if (lineItems[i]->checkHover(coords))
@@ -137,10 +138,14 @@ namespace Graphy_App
 		std::size_t width = this->width - (PADDING * 2);
 
 		// Adjust some of the panel's properties
-		expandedHeight += collapsedHeight + PADDING;
+		expandedHeight += collapsedHeight + (PADDING * 2);
 		heightIncr = (expandedHeight - collapsedHeight) / (InterfaceUtil::FPS / 2.0f);
 
 		cinder::Color bfc(BUTTON_BORDER_RED, BUTTON_BORDER_GREEN, BUTTON_BORDER_BLUE);
+		cinder::Color cc(CHECKBOX_CHECK_RED, CHECKBOX_CHECK_GREEN, CHECKBOX_CHECK_BLUE);
+		cinder::Color tc(CHECKBOX_TEXT_RED, CHECKBOX_TEXT_GREEN, CHECKBOX_TEXT_BLUE);
+		cinder::Color bc(CHECKBOX_BOX_RED, CHECKBOX_BOX_GREEN, CHECKBOX_BOX_BLUE);
+
 		switch (typ)
 		{
 		case LineItem::BUTTON:
@@ -152,17 +157,20 @@ namespace Graphy_App
 									   l, 
 									   width, 
 									   this->collapsedHeight));
-			if (currentState == EXP)
-			{
-				currentHeight = expandedHeight;
-			}
 			break;
 		case LineItem::CHECKBOX:
+			lineItems.push_back(new CheckBox(bc, cc, tc, ci::Vec2f(tl_x, tl_y),
+							    l, width, this->collapsedHeight));
 			break;
 		case LineItem::RADIO:
 			break;
 		default:
 			return;
+		}
+
+		if (currentState == EXP)
+		{
+			currentHeight = expandedHeight;
 		}
 	}
 
@@ -177,10 +185,19 @@ namespace Graphy_App
 	/* =======================================================
 		updatePos(Vec2f)
 	======================================================= */
-	void Panel::updatePos(ci::Vec2f& delta)
+	bool Panel::updatePos(ci::Vec2f& delta)
 	{
-		topLeft.x += delta.x;
-		topLeft.y += delta.y;
+		float tempX = topLeft.x + delta.x;
+		float tempY = topLeft.y + delta.y;
+
+		if (tempX < 0.0 || (tempX + width) > ci::app::getWindowWidth() ||
+			tempY < 0.0f || (tempY + currentHeight) > ci::app::getWindowHeight())
+		{
+			return false;
+		}
+
+		topLeft.x = tempX;
+		topLeft.y = tempY;
 
 		expander.updatePos(delta);
 
@@ -189,6 +206,8 @@ namespace Graphy_App
 		{
 			(*it)->updatePos(delta);
 		}
+
+		return true;
 	}
 
 	/* =======================================================
@@ -236,7 +255,7 @@ namespace Graphy_App
 		{
 			// Check to see if the LineItem is even visible
 			int space = currentHeight - collapsedHeight - PADDING;
-			int needed = (PADDING * (i+1)) + (collapsedHeight * (i+2));
+			int needed = (PADDING * (i+1)) + (collapsedHeight * (i+1));
 			if (space >= needed)
 			{
 				lineItems[i]->draw();

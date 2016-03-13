@@ -63,6 +63,9 @@
     <ClInclude Include="resources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Interface\CheckBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graph\AdjListNode.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Interface\Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\CheckBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

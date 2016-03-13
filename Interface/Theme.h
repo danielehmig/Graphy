@@ -24,6 +24,19 @@ namespace Graphy_App
 #define BUTTON_FILL_GREEN (233.0f / 255.0f)
 #define BUTTON_FILL_BLUE  (225.0f / 255.0f)
 
+// Color values (RGB) for the CheckBox Line Item type
+#define CHECKBOX_BOX_RED (128.0f / 255.0f)
+#define CHECKBOX_BOX_GREEN (128.0f / 255.0f)
+#define CHECKBOX_BOX_BLUE (128.0f / 255.0f)
+
+
+#define CHECKBOX_CHECK_RED (1.0f / 255.0f)
+#define CHECKBOX_CHECK_GREEN (1.0f / 255.0f)
+#define CHECKBOX_CHECK_BLUE (255.0f / 255.0f)
+
+#define CHECKBOX_TEXT_RED (0.0f / 255.0f)
+#define CHECKBOX_TEXT_GREEN (0.0f / 255.0f)
+#define CHECKBOX_TEXT_BLUE (0.0f / 255.0f)
 
 }
 

@@ -135,6 +135,7 @@
     <ClInclude Include="Graph\AdjListNode.h" />
     <ClInclude Include="Graph\Graph.h" />
     <ClInclude Include="Interface\Button.h" />
+    <ClInclude Include="Interface\CheckBox.h" />
     <ClInclude Include="Interface\Expander.h" />
     <ClInclude Include="Interface\GraphyApp.h" />
     <ClInclude Include="Interface\InterfaceUtil.h" />
@@ -154,6 +155,7 @@
     <ClCompile Include="Graph\Graph.cpp" />
     <ClCompile Include="Graph\TestMain.cpp" />
     <ClCompile Include="Interface\Button.cpp" />
+    <ClCompile Include="Interface\CheckBox.cpp" />
     <ClCompile Include="Interface\Expander.cpp" />
     <ClCompile Include="Interface\GraphyApp.cpp" />
     <ClCompile Include="Interface\InterfaceUtil.cpp" />

@@ -37,7 +37,8 @@ namespace Graphy_App
 
 		// When dragging, this function is invoked
 		// to update the current position of the panel
-		void updatePos(ci::Vec2f& delta);
+		// Returns false if the panel should not be dragged further
+		bool updatePos(ci::Vec2f& delta);
 
 		// Called before every frame draw by cinder
 		void update();

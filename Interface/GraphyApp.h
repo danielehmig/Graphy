@@ -2,6 +2,7 @@
 #define _GRAPHYAPP_H_
 
 #include "cinder/App/AppBasic.h"
+#include "WinUser.h"
 #include "LineItem.h"
 #include "Panel.h"
 #include "InterfaceUtil.h"
